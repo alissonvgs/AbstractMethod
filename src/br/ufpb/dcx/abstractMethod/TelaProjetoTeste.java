@@ -14,5 +14,14 @@ class TelaProjetoTeste {
 		t.desenhar();
 		assertEquals("Janela Windows{menuWindows, botaoWindows}", t.desenhar());
 		}
+	
+	@Test
+	void test1() {
+		TelaProjeto t = new TelaProjeto();
+		t.setFabrica( new FabricaAndroid());
+		t.montar();
+		t.desenhar();
+		assertEquals("Janela Android{menuAndroid, botaoAndroid}", t.desenhar());
+		}
 
 }

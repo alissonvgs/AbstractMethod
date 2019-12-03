@@ -2,20 +2,24 @@ package br.ufpb.dcx.abstractMethod;
 
 public class TelaProjeto {
 
-	private FabricaWindows fabricaWindows;
+	private FabricaAbstrata fabricaAbstrata;
+	private Janela janela;
+	private Menu menu;
+	private Botao botao;
 
-	public void setFabrica(FabricaWindows fabricaWindows) {
-		this.fabricaWindows = fabricaWindows;
+	public void setFabrica(FabricaAbstrata fabricaAbstrata) {
+		this.fabricaAbstrata = fabricaAbstrata;
 
 	}
 
 	public void montar() {
-		// TODO Auto-generated method stub
+		janela = this.fabricaAbstrata.criarJanela();
+		menu = this.fabricaAbstrata.criarMenu();
+		botao = this.fabricaAbstrata.criarBotao();
 
 	}
 
-	public void desenhar() {
-
+	public String desenhar() {
+		return janela.desenhar() + "{" + menu.desenhar() + ", " + botao.desenhar() + "}";
 	}
-
 }
